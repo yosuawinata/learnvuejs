@@ -1,9 +1,7 @@
 # LearnVueJs
 This is the repo to learn vuejs from basic.
-From the vue 3.4.9. there have important changed script import:
-<script src="https://unpkg.com/vue@next" defer></script>
-to
-<script src="https://unpkg.com/vue@3.4.9/dist/vue.global.js" defer></script>
+From the vue 3.4.9. there have important changed script import from:
+https://unpkg.com/vue@next to https://unpkg.com/vue@3.4.9/dist/vue.global.js
 
 # chapterOne
 Adding styles.css, index.html and app.js to create the first application.

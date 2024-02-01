@@ -6,7 +6,7 @@
     <title>Vue Basics</title>
     <link href="https://fonts.googleapis.com/css2?family=Jost:wght@400;700&display=swap" rel="stylesheet" />
     <link rel="stylesheet" href="styles.css" />
-    <script src="https://unpkg.com/vue@next" defer></script>
+    <script src="https://unpkg.com/vue@3.4.9/dist/vue.global.js" defer></script>
     <script src="app.js" defer></script>
   </head>
   <body>
@@ -15,9 +15,22 @@
     </header>
     <section id="events">
       <h2>Events in Action</h2>
-      <button>Add</button>
-      <button>Remove</button>
+      <h4>Events using function in HTML</h4>
+      <!-- you can use counter = counter + 1 -->
+      <button v-on:click="counter++">Add</button>
+      <!-- you can use counter = counter - 1 -->
+      <button v-on:click="counter--">Remove</button>
       <p>Result: {{ counter }}</p>
+
+      <h4>Event using Methods</h4>
+      <button v-on:click="addMethods">Add</button>
+      <button v-on:click="substractMethods">Substract</button>
+      <p>Result: {{ counterMethods }}</p>
+
+      <h4>Event using Arguments</h4>
+      <button v-on:click="addWith(10)">Add 10</button>
+      <button v-on:click="substractWith(5)">Substract 5</button>
+      <p>Result: {{ counterMethodsParam }}</p>
     </section>
   </body>
 </html>

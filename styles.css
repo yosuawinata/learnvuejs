@@ -38,6 +38,11 @@
     color: #4fc08d;
     margin: 0 0 1rem 0;
   }
+
+  h4 {
+    border-bottom: 1px dotted #ec9090;
+    color: #4fc08d;
+  }
   
   #events p {
     font-size: 1.25rem;

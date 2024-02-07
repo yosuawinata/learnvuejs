@@ -22,15 +22,43 @@
       <button v-on:click="counter--">Remove</button>
       <p>Result: {{ counter }}</p>
 
-      <h4>Event using Methods</h4>
+      <h4>Event using Methods - How Vue handle event modifiers with right click when substraction</h4>
       <button v-on:click="addMethods">Add</button>
-      <button v-on:click="substractMethods">Substract</button>
+
+      <!-- using event modifiers to substract if only right click is pressed -->
+      <button v-on:click.right="substractMethods">Substract</button>
       <p>Result: {{ counterMethods }}</p>
 
       <h4>Event using Arguments</h4>
       <button v-on:click="addWith(10)">Add 10</button>
       <button v-on:click="substractWith(5)">Substract 5</button>
       <p>Result: {{ counterMethodsParam }}</p>
+
+      <h4>Events using Native Event Object - How Vuejs's Reacts to input</h4>
+      <input type="text" v-on:input="setName">
+      <p>Your Name: {{ name }}</p>
+
+      <h4>Events using Native Event Object with Parameters - Vuejs's Reacts and add Params</h4>
+      <input type="text" v-on:input="setNameWithParam($event, 'Winz')">
+      <p>Your Name: {{ nameWithParam }}</p>
+
+      <h4>Events using Native Event Object - How Vue handle restart the apps</h4>
+      <!-- vue have the way easier to prevent with add (.) dot before equivalent mark like example in below -->
+      <form v-on:submit.prevent="submitForm">
+        <input type="text">
+        <button>Sign Up</button>
+      </form>
+
+      <h4>Events using Native Event Object - How Vue handle with keyup and react only with enter stroke and add params</h4>
+      <input type="text" v-on:input="setConfirmationNameWithParam($event, 'Winata')" v-on:keyup.enter="setNameWithConfirmation">
+      <p>Your Name: {{ confirmedName }}</p>
+
+      <h4>Events using Native Event Object - Use the v-once as the initiator and lock the value</h4>
+      <p v-once>Starting Counter: {{ startingCounter }}</p> <!-- if the v-once attribute is removed, so, the value of counter will same with Starting and Result -->
+      <button v-on:click="addWithStartCount(10)">Add 10</button>
+      <button v-on:click="substractWithStartCount(5)">Substract 5</button>
+      <p>Result: {{ startingCounter }}</p>
+
     </section>
   </body>
 </html>

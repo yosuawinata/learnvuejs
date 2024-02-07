@@ -13,3 +13,9 @@ binding attributes with the v-bind directive, methods, working with data inside 
 Update styles.css, index.html and app.js from the chapterOne. 
 In this chapter, we will learn about strong of JS, namely events. We will learn also about methods, working with arguments,
 using the native object, explore more event modifiers, and locking content with v-once.
+
+
+# notes:
+Branch information that may be you see:
+- rc => release chapter (1,2, etc)
+- master => default branch (main branch) that we on it.

@@ -1,35 +1,33 @@
 const app = Vue.createApp({
     data() {
       return {
-        counter: 0,
         counterMethods: 0,
-        counterMethodsParam: 0,
         name: '',
-        nameWithParam: '',
-        confirmedName: '',
-        confirmedNameWithParam: '',
-        startingCounter: 10
+        nameUseModel: '',
+        fullName: '',
+        fullNameComputed: ''
       };
     },
+    computed: {
+        setFullNameComputed() {
+            console.log('Running again...')
+            if (this.fullNameComputed === '') {
+                return '';
+            };
+            return this.fullNameComputed + ' ' + 'Winata';
+        }
+    },
     methods: {
-        confirmInput() {
-            this.confirmedName = this.name;
-        },
-        submitForm(event) {
-            // event.preventDefault(); // this function to prevent refreshment data (vue app restarted) until the input data can be lost (using vanilla way)
-            alert('Data has been submitted!')
+        setFullName() {
+            // this script how to check the page will rendered by vuejs
+            console.log('Running again...')
+            if (this.fullName === '') {
+                return '';
+            };
+            return this.fullName + ' ' + 'Winata';
         },
         setName(event) {
             this.name = event.target.value;
-        },
-        setNameWithParam(event, lastName) {
-            this.nameWithParam = event.target.value + ' ' + lastName;
-        },
-        setConfirmationNameWithParam(event, lastName) {
-            this.confirmedNameWithParam = event.target.value + ' ' + lastName;
-        },
-        setNameWithConfirmation(event, lastName) {
-            this.confirmedName = this.confirmedNameWithParam;
         },
         addMethods() {
             this.counterMethods++; // you can write like this.counter = this.counter + 1
@@ -37,17 +35,18 @@ const app = Vue.createApp({
         substractMethods() {
             this.counterMethods--; // you can write like this.counterMethods = this.counterMethods - 1
         },
-        addWith(param) {
-            this.counterMethodsParam = this.counterMethodsParam + param
+        resetInput() {
+            // document.querySelector('input').value=''; // reset the form input with vanilla'js way
+            this.name = '';
         },
-        substractWith(param) {
-            this.counterMethodsParam = this.counterMethodsParam - param
+        resetInput2() {
+            this.nameUseModel = '';
         },
-        addWithStartCount(param) {
-            this.startingCounter = this.startingCounter + param
+        resetInput3() {
+            this.fullName = '';
         },
-        substractWithStartCount(param) {
-            this.startingCounter = this.startingCounter - param
+        resetInput4() {
+            this.fullNameComputed = '';
         }
     }
   });

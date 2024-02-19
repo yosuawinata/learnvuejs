@@ -20,7 +20,7 @@ const app = Vue.createApp({
     methods: {
         setFullName() {
             // this script how to check the page will rendered by vuejs
-            console.log('Running again...')
+            // console.log('Running again...')
             if (this.fullName === '') {
                 return '';
             };

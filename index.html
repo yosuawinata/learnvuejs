@@ -28,6 +28,11 @@
       <p>Your Name: {{ nameUseModel }}</p>
 
       <h4>Event using Methods - Usage of v-model with full name and check the perfomances of VueJs (check the console log in the browser)</h4>
+      <input type="text" v-model="fullName"> <button v-on:click="resetInput3">Reset Input</button>
+      <p>Your Name: {{ setFullName() }}</p>
+
+      <h4>Event using Methods - Usage of Computed Properties - Check the console in the inspect element, and watch out about "Running Again"
+        after you run all the function within UI. </h4>
       <input type="text" v-model="fullNameComputed"> <button v-on:click="resetInput4">Reset Input</button>
       <p>Your Name: {{ setFullNameComputed }}</p>
 
